@@ -1,0 +1,139 @@
+@use '../util' as u;
+
+.product-card {
+  width: min(100% - u.rem(10), u.rem(310));
+  position: relative;
+
+
+  @include u.breakpoint-down(small) {
+    width: 50%;
+  }
+
+  &:hover {
+    .product-card__image-main {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .product-card__image-detail {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .product-card__actions {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &__body {
+    border: 1px solid #EDE8E7;
+  }
+
+  &__tags {
+    position: absolute;
+    left: u.rem(15);
+    top: u.rem(15);
+    z-index: 10;
+  }
+
+  &__tag {
+    padding: u.rem(8);
+    display: inline-block;
+    align-self: baseline;
+    color: var(--clr-white);
+
+    &--bestseller {
+      background-color: var(--clr-purple);
+    }
+
+    &--new {
+      background-color: var(--clr-green);
+    }
+
+    &--sale {
+      background-color: var(--clr-orange);
+    }
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+
+    img {
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &-main {
+
+      @include u.breakpoint-down(small) {
+        display: none;
+      }
+    }
+
+    &-detail {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+
+      @include u.breakpoint-down(small) {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__info {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: u.rem(18);
+
+    @include u.breakpoint-down(small) {
+      font-size: u.rem(14);
+    }
+  }
+
+  &__main {
+    font-size: u.rem(16);
+    color: var(--clr-beige);
+    text-decoration: line-through;
+
+
+    @include u.breakpoint-down(small) {
+      font-size: u.rem(14);
+    }
+  }
+
+  &__discount {
+    font-size: u.rem(20);
+    font-weight: 500;
+
+    @include u.breakpoint-down(small) {
+      font-size: u.rem(16);
+    }
+  }
+
+  &__actions {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: 0;
+    transition: all 0.3s ease-in-out;
+
+
+    @include u.breakpoint-down(small) {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+}
