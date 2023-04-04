@@ -1,0 +1,82 @@
+@use '../util' as u;
+
+
+.polaroid {
+  background-image: url('../img/content/polaroid-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding-block: u.rem(30);
+
+  &__item {
+    max-width: u.rem(365);
+    width: 100%;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    border: 1px solid rgba(0, 0, 0, .3);
+
+    &:nth-of-type(1) {
+
+      .polaroid__info {
+        &:nth-of-type(1) {
+          top: 40%;
+          left: -20%;
+        }
+
+        &:nth-of-type(2) {
+          left: 20%;
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+      margin-left: u.rem(-10);
+
+      .polaroid__info {
+        &:nth-of-type(1) {
+          top: 40%;
+          right: -65%;
+        }
+
+        &:nth-of-type(2) {
+          left: -60%;
+          top: 20%;
+        }
+
+        &:nth-of-type(3) {
+          left: -10%;
+          top: 80%;
+        }
+      }
+    }
+
+    &:nth-of-type(3) {
+
+      .polaroid__info {
+        &:nth-of-type(1) {
+          top: 30%;
+          right: -40%;
+        }
+
+        &:nth-of-type(2) {
+          left: -60%;
+          top: 35%;
+        }
+
+        &:nth-of-type(3) {
+          left: -45%;
+          top: 55%;
+        }
+      }
+    }
+  }
+
+
+  &__info {
+    max-width: u.rem(313);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(40px);
+    transform: translate3d(0, 0, 0);
+  }
+}

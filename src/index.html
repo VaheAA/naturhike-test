@@ -182,6 +182,220 @@
     </div>
   </div>
 
+  <!-- Polaroid slider -->
+
+  <div class="polaroid">
+    <div class="container-xxl h-100">
+      <div id="carouselExampleSlidesOnly" class="carousel slide h-100" data-bs-ride="carousel">
+        <div class="carousel-inner h-100 overflow-visible">
+          <!-- Slide 1 -->
+          <div class="carousel-item active d-flex justify-content-center align-items-center h-100 position-relative">
+            <!-- Item 1 -->
+            <div class="polaroid__item  position-relative px-2 pt-1 pb-5 bg-white" style="rotate: -10deg;"
+              x-data="{infoOpen1: false, infoOpen2: false}">
+              <img class="d-block" src="./assets/img/content/polaroid-1.png" alt="" style="rotate: 5.75deg">
+              <button @click="infoOpen1 = true" class="btn d-inline-block position-absolute"
+                style="left: 50%; top: 40%">
+                <img src="./assets/img/icons/plus.svg" alt="">
+              </button>
+              <button @click="infoOpen2 = true" class="btn d-inline-block position-absolute"
+                style="left: 65%; top: 50%">
+                <img src="./assets/img/icons/plus.svg" alt="">
+              </button>
+              <div x-show="infoOpen1"
+                class="polaroid__info text-black position-absolute bg-secondary bg-opacity-75 p-3 rounded-3 gap-3 text-black"
+                :class="infoOpen1 && 'd-flex'" style="backdrop-filter: blur(5px); rotate: 10deg">
+                <img class="align-self-baseline" src="./assets/img/content/product-placeholder.jpg" alt=""
+                  class="polaroid__info-image">
+                <div class="d-block">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="h6">Title product long</h6>
+                    <button type="button" class="align-self-start" @click="infoOpen1 = false">
+                      <img src="./assets/img/icons/times.svg" alt="">
+                    </button>
+                  </div>
+                  <p class="fs-7">Lorem ipsum dolor sit amet, con secte tur adipiscing elit. Ultrices eget or nare
+                    suscipit
+                    enim.Lorem ipsum dolor sit amet, consecte tur adipiscing elit.</p>
+                  <button type="button" class="btn btn-outline-dark text-white border-white hover-transparent">Learn
+                    more</button>
+                </div>
+              </div>
+              <div x-show="infoOpen2"
+                class="polaroid__info text-black position-absolute bg-secondary bg-opacity-75 p-3 rounded-3 gap-3 text-black"
+                :class="infoOpen2 && 'd-flex'" style="backdrop-filter: blur(5px); rotate: 10deg">
+                <img class="align-self-baseline" src="./assets/img/content/product-placeholder.jpg" alt=""
+                  class="polaroid__info-image">
+                <div class="d-block">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="h6">Title product long</h6>
+                    <button type="button" class="align-self-start" @click="infoOpen2 = false">
+                      <img src="./assets/img/icons/times.svg" alt="">
+                    </button>
+                  </div>
+                  <p class="fs-7">Lorem ipsum dolor sit amet, con secte tur adipiscing elit. Ultrices eget or nare
+                    suscipit
+                    enim.Lorem ipsum dolor sit amet, consecte tur adipiscing elit.</p>
+                  <button type="button" class="btn btn-outline-dark text-white border-white hover-transparent">Learn
+                    more</button>
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="polaroid__item  position-relative px-2 pt-1 pb-5 bg-white" style="rotate: 10deg;"
+              x-data="{infoOpen1: false, infoOpen2: false, infoOpen3: false, open: false}"
+              :class="open ? 'z-index-10' : 'z-index-1'">
+              <img class=" d-block" src="./assets/img/content/polaroid-2.png" alt="" style="rotate: -4.25deg">
+              <button @click="infoOpen1 = true; open = true" class="btn d-inline-block position-absolute"
+                style="left: 65%; top: 35%">
+                <img src="./assets/img/icons/plus.svg" alt="">
+              </button>
+              <button @click="infoOpen2 = true; open = true" class="btn d-inline-block position-absolute"
+                style="left: 25%; top: 55%">
+                <img src="./assets/img/icons/plus.svg" alt="">
+              </button>
+              <button @click="infoOpen3 = true; open = true" class="btn d-inline-block position-absolute"
+                style="left: 70%; top: 60%">
+                <img src="./assets/img/icons/plus.svg" alt="">
+              </button>
+              <div x-show="infoOpen1"
+                class="polaroid__info text-black position-absolute bg-secondary bg-opacity-75 p-3 rounded-3 gap-3 text-black"
+                :class="infoOpen1 && 'd-flex'" style="backdrop-filter: blur(5px); rotate: -10deg;">
+                <img class="align-self-baseline" src="./assets/img/content/product-placeholder.jpg" alt=""
+                  class="polaroid__info-image">
+                <div class="d-block">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="h6">Title product long</h6>
+                    <button type="button" class="align-self-start" @click="infoOpen1 = false; open =false">
+                      <img src="./assets/img/icons/times.svg" alt="">
+                    </button>
+                  </div>
+                  <p class="fs-7">Lorem ipsum dolor sit amet, con secte tur adipiscing elit. Ultrices eget or nare
+                    suscipit
+                    enim.Lorem ipsum dolor sit amet, consecte tur adipiscing elit.</p>
+                  <button type="button" class="btn btn-outline-dark text-white border-white hover-transparent">Learn
+                    more</button>
+                </div>
+              </div>
+              <div x-show="infoOpen2"
+                class="polaroid__info text-black position-absolute bg-secondary bg-opacity-75 p-3 rounded-3 gap-3 text-black"
+                :class="infoOpen2 && 'd-flex'" style="backdrop-filter: blur(5px); rotate: -10deg">
+                <img class="align-self-baseline" src="./assets/img/content/product-placeholder.jpg" alt=""
+                  class="polaroid__info-image">
+                <div class="d-block">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="h6">Title product long</h6>
+                    <button type="button" class="align-self-start" @click="infoOpen2 = false; open =false">
+                      <img src="./assets/img/icons/times.svg" alt="">
+                    </button>
+                  </div>
+                  <p class="fs-7">Lorem ipsum dolor sit amet, con secte tur adipiscing elit. Ultrices eget or nare
+                    suscipit
+                    enim.Lorem ipsum dolor sit amet, consecte tur adipiscing elit.</p>
+                  <button type="button" class="btn btn-outline-dark text-white border-white hover-transparent">Learn
+                    more</button>
+                </div>
+              </div>
+              <div x-show="infoOpen3"
+                class="polaroid__info text-black position-absolute bg-secondary bg-opacity-75 p-3 rounded-3 gap-3 text-black"
+                :class="infoOpen3 && 'd-flex'" style="backdrop-filter: blur(5px); rotate: -10deg;">
+                <img class="align-self-baseline" src="./assets/img/content/product-placeholder.jpg" alt=""
+                  class="polaroid__info-image">
+                <div class="d-block">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="h6">Title product long</h6>
+                    <button type="button" class="align-self-start" @click="infoOpen3 = false; open =false">
+                      <img src="./assets/img/icons/times.svg" alt="">
+                    </button>
+                  </div>
+                  <p class="fs-7">Lorem ipsum dolor sit amet, con secte tur adipiscing elit. Ultrices eget or nare
+                    suscipit
+                    enim.Lorem ipsum dolor sit amet, consecte tur adipiscing elit.</p>
+                  <button type="button" class="btn btn-outline-dark text-white border-white hover-transparent">Learn
+                    more</button>
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="polaroid__item  position-relative px-2 pt-1 pb-5 bg-white" style="rotate: -10deg;"
+              x-data="{infoOpen1: false, infoOpen2: false, infoOpen3: false, open: false}"
+              :class="open ? 'z-index-10' : 'z-index-1'">
+              <img class=" d-block" src="./assets/img/content/polaroid-3.png" alt="" style="rotate: 5.42deg">
+              <button @click="infoOpen1 = true; open = true" class="btn d-inline-block position-absolute"
+                style="left: 44%; top: 15%">
+                <img src="./assets/img/icons/plus.svg" alt="">
+              </button>
+              <button @click="infoOpen2 = true; open = true" class="btn d-inline-block position-absolute"
+                style="left: 30%; top: 32%">
+                <img src="./assets/img/icons/plus.svg" alt="">
+              </button>
+              <button @click="infoOpen3 = true; open = true" class="btn d-inline-block position-absolute"
+                style="left: 36%; top: 52%">
+                <img src="./assets/img/icons/plus.svg" alt="">
+              </button>
+              <div x-show="infoOpen1"
+                class="polaroid__info text-black position-absolute bg-secondary bg-opacity-75 p-3 rounded-3 gap-3 text-black"
+                :class="infoOpen1 && 'd-flex'" style="backdrop-filter: blur(5px); rotate: 10deg; z-index: 3;">
+                <img class="align-self-baseline" src="./assets/img/content/product-placeholder.jpg" alt=""
+                  class="polaroid__info-image">
+                <div class="d-block">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="h6">Title product long</h6>
+                    <button type="button" class="align-self-start" @click="infoOpen1 = false; open = false">
+                      <img src="./assets/img/icons/times.svg" alt="">
+                    </button>
+                  </div>
+                  <p class="fs-7">Lorem ipsum dolor sit amet, con secte tur adipiscing elit. Ultrices eget or nare
+                    suscipit
+                    enim.Lorem ipsum dolor sit amet, consecte tur adipiscing elit.</p>
+                  <button type="button" class="btn btn-outline-dark text-white border-white hover-transparent">Learn
+                    more</button>
+                </div>
+              </div>
+              <div x-show="infoOpen2"
+                class="polaroid__info text-black position-absolute bg-secondary bg-opacity-75 p-3 rounded-3 gap-3 text-black"
+                :class="infoOpen2 && 'd-flex'" style="backdrop-filter: blur(5px); rotate: 10deg; z-index: 3;">
+                <img class="align-self-baseline" src="./assets/img/content/product-placeholder.jpg" alt=""
+                  class="polaroid__info-image">
+                <div class="d-block">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="h6">Title product long</h6>
+                    <button type="button" class="align-self-start" @click="infoOpen2 = false; open = false">
+                      <img src="./assets/img/icons/times.svg" alt="">
+                    </button>
+                  </div>
+                  <p class="fs-7">Lorem ipsum dolor sit amet, con secte tur adipiscing elit. Ultrices eget or nare
+                    suscipit
+                    enim.Lorem ipsum dolor sit amet, consecte tur adipiscing elit.</p>
+                  <button type="button" class="btn btn-outline-dark text-white border-white hover-transparent">Learn
+                    more</button>
+                </div>
+              </div>
+              <div x-show="infoOpen3"
+                class="polaroid__info text-black position-absolute bg-secondary bg-opacity-75 p-3 rounded-3 gap-3 text-black"
+                :class="infoOpen3 && 'd-flex'" style="backdrop-filter: blur(5px); rotate: 10deg; z-index: 3;">
+                <img class="align-self-baseline" src="./assets/img/content/product-placeholder.jpg" alt=""
+                  class="polaroid__info-image">
+                <div class="d-block">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="h6">Title product long</h6>
+                    <button type="button" class="align-self-start" @click="infoOpen3 = false; open = false">
+                      <img src="./assets/img/icons/times.svg" alt="">
+                    </button>
+                  </div>
+                  <p class="fs-7">Lorem ipsum dolor sit amet, con secte tur adipiscing elit. Ultrices eget or nare
+                    suscipit
+                    enim.Lorem ipsum dolor sit amet, consecte tur adipiscing elit.</p>
+                  <button type="button" class="btn btn-outline-dark text-white border-white hover-transparent">Learn
+                    more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
