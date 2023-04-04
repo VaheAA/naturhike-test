@@ -6,7 +6,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  padding-block: u.rem(30);
+  padding-block: u.rem(110);
+  padding-inline: u.rem(50);
 
   &__item {
     max-width: u.rem(365);
