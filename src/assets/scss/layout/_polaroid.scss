@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  padding-block: u.rem(110);
+  padding-block: u.rem(50);
   padding-inline: u.rem(50);
 
   @include u.breakpoint-down(small) {
