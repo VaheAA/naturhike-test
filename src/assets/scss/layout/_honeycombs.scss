@@ -1,0 +1,64 @@
+@use '../util' as u;
+
+.honeycombs {
+  background-image: url('../img/design/honeycombs-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+
+  .comb {
+    position: relative;
+    width: u.rem(191);
+    height: u.rem(141);
+    margin: 0 10px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: u.rem(20);
+    margin-inline: u.rem(-10);
+    overflow: hidden;
+    filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.25));
+
+    @include u.breakpoint-down(small) {
+      width: u.rem(127);
+      height: u.rem(98);
+    }
+
+    &[data-comb="1"] {
+      background-image: url('../img/content/comb-1.png');
+    }
+
+    &[data-comb="2"] {
+      background-image: url('../img/content/comb-2.png');
+    }
+
+    &[data-comb="3"] {
+      background-image: url('../img/content/comb-3.png');
+    }
+
+    &[data-comb="4"] {
+      background-image: url('../img/content/comb-4.png');
+    }
+
+    &[data-comb="5"] {
+      background-image: url('../img/content/comb-5.png');
+    }
+
+    &[data-comb="6"] {
+      background-image: url('../img/content/comb-6.png');
+    }
+
+    &[data-comb="7"] {
+      background-image: url('../img/content/comb-7.png');
+    }
+
+    &[data-comb="8"] {
+      background-image: url('../img/content/comb-8.png');
+    }
+
+    &[data-comb="9"] {
+      background-image: url('../img/content/comb-9.png');
+    }
+  }
+}
