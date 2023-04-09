@@ -7,6 +7,33 @@
   height: 100vh;
 
 
+  &__grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0px 0px;
+    grid-template-areas:
+      "comb-1 . comb-4 . comb-9"
+      "comb-1 comb-2 comb-5 comb-7 comb-9"
+      "comb-1 comb-3 comb-6 comb-8 comb-9"
+      "comb-1 . comb-10 . comb-9";
+
+    @include u.breakpoint-down(small) {
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas:
+        "comb-1 comb-1 comb-1"
+        "comb-2 comb-3 comb-4"
+        "comb-5 .      comb-6"
+        "comb-7 comb-8 comb-9"
+      ;
+      place-items: center;
+    }
+  }
+
+
   .comb {
     position: relative;
     width: u.rem(191);
@@ -21,44 +48,89 @@
     filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.25));
 
     @include u.breakpoint-down(small) {
-      width: u.rem(127);
-      height: u.rem(98);
+      width: u.rem(130);
+      height: u.rem(105);
+      margin-bottom: u.rem(20);
     }
 
     &[data-comb="1"] {
       background-image: url('../img/content/comb-1.png');
+      grid-area: comb-1;
+
+      @include u.breakpoint-down(small) {
+        margin-bottom: u.rem(-115);
+      }
     }
 
     &[data-comb="2"] {
       background-image: url('../img/content/comb-2.png');
+      grid-area: comb-2;
     }
 
     &[data-comb="3"] {
       background-image: url('../img/content/comb-3.png');
+      grid-area: comb-3;
+
+      @include u.breakpoint-down(small) {
+        margin-bottom: u.rem(-100);
+      }
     }
 
     &[data-comb="4"] {
       background-image: url('../img/content/comb-4.png');
+      grid-area: comb-4;
+      margin-bottom: u.rem(-145);
+
+      @include u.breakpoint-down(small) {
+        margin-bottom: u.rem(20)
+      }
+
     }
 
     &[data-comb="5"] {
       background-image: url('../img/content/comb-5.png');
+      grid-area: comb-5;
+      margin-bottom: u.rem(-145);
+
+
+      @include u.breakpoint-down(small) {
+        margin-bottom: u.rem(20)
+      }
+
     }
 
     &[data-comb="6"] {
       background-image: url('../img/content/comb-6.png');
+      grid-area: comb-6;
+      margin-bottom: u.rem(-145);
+
+      @include u.breakpoint-down(small) {
+        margin-bottom: u.rem(20)
+      }
     }
 
     &[data-comb="7"] {
       background-image: url('../img/content/comb-7.png');
+      grid-area: comb-7;
     }
 
     &[data-comb="8"] {
       background-image: url('../img/content/comb-8.png');
+      grid-area: comb-8;
+
+      @include u.breakpoint-down(small) {
+        margin-top: u.rem(-130);
+      }
     }
 
     &[data-comb="9"] {
       background-image: url('../img/content/comb-9.png');
+      grid-area: comb-9;
+    }
+
+    &[data-comb="10"] {
+      // background-image: url('../img/content/comb-9.png');
+      grid-area: comb-10;
     }
   }
 }
