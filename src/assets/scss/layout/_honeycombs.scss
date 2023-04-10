@@ -24,10 +24,10 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(4, 1fr);
       grid-template-areas:
-        "comb-1 comb-1 comb-1"
-        "comb-2 comb-3 comb-4"
-        "comb-5 .      comb-6"
-        "comb-7 comb-8 comb-9"
+        "comb-4 comb-4 comb-4"
+        "comb-2 comb-5 comb-7"
+        "comb-3 .      comb-8"
+        "comb-9 comb-1 comb-6"
       ;
       place-items: center;
     }
@@ -46,6 +46,12 @@
     margin-inline: u.rem(-10);
     overflow: hidden;
     filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.25));
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2);
+    }
 
     @include u.breakpoint-down(small) {
       width: u.rem(130);
@@ -58,22 +64,20 @@
       grid-area: comb-1;
 
       @include u.breakpoint-down(small) {
-        margin-bottom: u.rem(-115);
+        margin-top: u.rem(-130);
       }
     }
 
     &[data-comb="2"] {
       background-image: url('../img/content/comb-2.png');
       grid-area: comb-2;
+
     }
 
     &[data-comb="3"] {
       background-image: url('../img/content/comb-3.png');
       grid-area: comb-3;
 
-      @include u.breakpoint-down(small) {
-        margin-bottom: u.rem(-100);
-      }
     }
 
     &[data-comb="4"] {
@@ -82,7 +86,7 @@
       margin-bottom: u.rem(-145);
 
       @include u.breakpoint-down(small) {
-        margin-bottom: u.rem(20)
+        margin-bottom: u.rem(-115);
       }
 
     }
@@ -92,11 +96,9 @@
       grid-area: comb-5;
       margin-bottom: u.rem(-145);
 
-
       @include u.breakpoint-down(small) {
-        margin-bottom: u.rem(20)
+        margin-bottom: u.rem(-110);
       }
-
     }
 
     &[data-comb="6"] {
@@ -118,9 +120,6 @@
       background-image: url('../img/content/comb-8.png');
       grid-area: comb-8;
 
-      @include u.breakpoint-down(small) {
-        margin-top: u.rem(-130);
-      }
     }
 
     &[data-comb="9"] {
