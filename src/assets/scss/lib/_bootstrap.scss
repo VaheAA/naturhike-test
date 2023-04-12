@@ -16,9 +16,31 @@ $utilities: map-merge($utilities,
       ),
     ));
 
+$utilities: map-merge($utilities,
+    ("border-color": map-merge(map-get($utilities, "border-color"),
+        (responsive: true),
+      ),
+    ));
+
+$utilities: map-merge($utilities,
+    ("color": map-merge(map-get($utilities, "color"),
+        (responsive: true),
+      ),
+    ));
+
+$utilities: (
+  "end": (property: right,
+    class: end,
+    responsive: true,
+    values: (5: 5px),
+  ),
+);
+
 
 @import "bootstrap/scss/utilities/api";
 @import 'bootstrap/scss/bootstrap';
+
+
 
 .carousel-control-next,
 .carousel-control-prev {

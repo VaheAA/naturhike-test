@@ -10,8 +10,8 @@
   padding-inline: u.rem(50);
 
   @include u.breakpoint-down(small) {
-    padding-block: u.rem(30);
-    padding-inline: u.rem(24);
+    padding-block: u.rem(0);
+    padding-inline: u.rem(0);
     height: 100%;
   }
 
@@ -86,16 +86,29 @@
 
 
   &__info {
-    max-width: u.rem(313);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(40px);
     position: absolute;
+
+    &-content {
+      max-width: u.rem(313);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(40px);
+
+      @include u.breakpoint-down(small) {
+        background-color: var(--clr-gray);
+        backdrop-filter: unset;
+        max-width: u.rem(224);
+
+      }
+    }
 
 
     @include u.breakpoint-down(small) {
-      position: static;
       margin-inline: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .2);
     }
-
   }
 }
