@@ -1,4 +1,5 @@
 export default () => ({
+  defaultBg: require('../../img/design/honeycombs-bg.jpg'),
   combs: [
     {
       id: '1',
@@ -85,4 +86,16 @@ export default () => ({
     },
   ],
   currentComb: '',
+  changeBg(element) {
+    element.parentElement.parentElement.parentElement.parentElement.parentElement.style.backgroundImage = `url(${this.combs[0].bgImage})`;
+  },
+  init() {
+    this.combs.forEach((comb) => {
+      const link = document.createElement('link');
+      link.as = 'image';
+      link.href = comb.bgImage.slice(38);
+      link.rel = 'preload';
+      document.head.appendChild(link);
+    });
+  },
 });
