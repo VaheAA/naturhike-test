@@ -38,13 +38,7 @@ body {
   font-family: u.$fontManrope;
   scrollbar-width: thin;
   scrollbar-color: #B72C2C white;
-  overflow-y: scroll !important;
   padding-right: 0 !important;
-
-  @include u.breakpoint-down(small) {}
-
-  padding-right: unset;
-  overflow-y: unset;
 }
 
 

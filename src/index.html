@@ -190,7 +190,7 @@
         <!-- Slide 1 -->
         <template x-for="slide in slides">
           <div class="carousel-item h-100" :class="slide.id === '1'  && 'active'">
-            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center h-100 py-5 py-md-0">
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center h-100 py-10">
               <template x-for="picture in slide.pictures">
                 <div class="polaroid__item  position-relative px-2 pt-1 pb-5 bg-white w-75"
                   :style="{rotate: picture.rotate}">
@@ -217,13 +217,19 @@
                       <div class="d-block">
                         <div class="d-flex justify-content-between">
                           <h6 class="fs-10">Title product long</h6>
-                          <button type="button" class="position-absolute top-0 end-5 mr-1"
-                            @click="picture.currentPopup = ''">
-                            <img width="10" src="./assets/img/icons/times.svg" alt="">
+                          <button type="button" class="position-absolute top-0 end-5 mr-1" @click="cleanPopups()">
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M6.44179 7.21567L4.00328 4.77716L1.56209 7.21834L0.782262 6.43851L3.22345 3.99733L0.784934 1.55882L1.56562 0.778133L4.00413 3.21665L6.43912 0.781658L7.21895 1.56149L4.78396 3.99647L7.22247 6.43499L6.44179 7.21567Z"
+                                :fill="window.innerWidth < 728 ? '#353535' : '#fff'" />
+                            </svg>
+
                           </button>
                         </div>
                         <p class="fs-8" x-text="popup.text"></p>
-                        <button type="button" class="btn text-dark text-sm-white text-black">Learn
+                        <button type="button" class="btn"
+                          :class="window.innerWidth <=728 ? 'btn-outline-dark' : 'btn-outline-light'">Learn
                           more</button>
                       </div>
                     </div>
@@ -258,85 +264,7 @@
 
 
   <!-- honeycombs  -->
-  <div class="honeycombs" x-data="{
-    combs: [
-      {
-        id: '1',
-        title: 'Cookware'
-      },
-      {
-        id: '2',
-        title: 'Mats & pillow'
-      },
-      {
-        id: '3',
-        title: 'Furniture'
-      },
-      {
-        id: '4',
-        title: 'Tents'
-      },
-      {
-        id: '5',
-        title: 'Hammocks'
-      },
-      {
-        id: '6',
-        title: 'Others'
-      },
-      {
-        id: '7',
-        title: 'Sleeping bags'
-      },
-      {
-        id: '8',
-        title: 'Backpack & Bags'
-      },
-      {
-        id: '9',
-        title: 'Trekking poles'
-      },
-    ],
-    texts: [
-      {
-        id: '1',
-        text: 'When creating our cookware, we took inspiration from the most famous chefs around the world.'
-      },
-      {
-        id: '2',
-        text: 'When creating our tents, we took inspiration from the most famous mountains around the world.'
-      },
-      {
-        id: '3',
-        text: 'When creating our sleeping bags, we took inspiration from the most famous national parks around the world.'
-      },
-      {
-        id: '4',
-        text: 'When creating our mats & pillows, we took inspiration from the most famous coasts around the world.'
-      },
-      {
-        id: '5',
-        text: 'When creating our hammocks, we took inspiration from the most famous beaches around the world.'
-      },
-      {
-        id: '6',
-        text: 'When creating our furniture, we took inspiration from the most beautiful trees on the planet.'
-      },
-      {
-        id: '7',
-        text: 'When creating our trekking poles, we took inspiration from the most beautiful hills around the world.'
-      },
-      {
-        id: '8',
-        text: 'When creating our backpacks & bags, we took inspiration from the most adventures places around the world.'
-      },
-      {
-        id: '9',
-        text: 'When creating our other we took inspiration in most beautiful places all around the world.'
-      },
-    ],
-    currentComb: ''
-  }">
+  <div class="honeycombs" x-data="honeycombs" :style="{'backgroundImage':  getBgImage()}">
     <div class="container-lg h-100">
       <div class="h-auto d-flex">
         <div class="d-flex align-items-center flex-column flex-sm-row h-100 pb-5">

@@ -14,16 +14,12 @@ $utilities: map-merge($utilities,
     ("font-size": map-merge(map-get($utilities, "font-size"),
         (responsive: true),
       ),
-    ));
-
-$utilities: map-merge($utilities,
-    ("border-color": map-merge(map-get($utilities, "border-color"),
+    ),
+    ("color": map-merge(map-get($utilities, "color"),
         (responsive: true),
       ),
-    ));
-
-$utilities: map-merge($utilities,
-    ("color": map-merge(map-get($utilities, "color"),
+    ),
+    ("border-color": map-merge(map-get($utilities, "border-color"),
         (responsive: true),
       ),
     ));
@@ -33,6 +29,11 @@ $utilities: (
     class: end,
     responsive: true,
     values: (5: 5px),
+  ),
+  "padding-block": (property: padding-block,
+    class: py,
+    responsive: true,
+    values: (10: 70px),
   ),
 );
 

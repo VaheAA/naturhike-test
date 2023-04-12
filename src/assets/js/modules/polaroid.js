@@ -256,26 +256,25 @@ export default () => ({
   currentSlide: 1,
   bindPopup(element) {
     if (window.innerWidth >= 728) {
-      const rect = element.getBoundingClientRect();
-      const { top, left } = rect;
-
       this.slides.forEach((slide) => {
         slide.pictures.forEach((picture) => {
           picture.popups.forEach((popup) => {
-            popup.left = `${left - 310}px`;
-            popup.top = `${top}px`;
+            popup.left = `${
+              element.offsetLeft + element.offsetParent.offsetLeft - 300
+            }px`;
+            popup.top = `${element.offsetTop + 90}px`;
           });
         });
       });
 
       window.addEventListener('resize', () => {
-        const rect = element.getBoundingClientRect();
-        const { top, left } = rect;
         this.slides.forEach((slide) => {
           slide.pictures.forEach((picture) => {
             picture.popups.forEach((popup) => {
-              popup.left = `${left - 310}px`;
-              popup.top = `${top}px`;
+              popup.left = `${
+                element.offsetLeft + element.offsetParent.offsetLeft - 300
+              }px`;
+              popup.top = `${element.offsetTop + 90}px`;
             });
           });
         });
@@ -283,5 +282,10 @@ export default () => ({
     } else {
       return;
     }
+  },
+  cleanPopups() {
+    this.slides.forEach((slide) =>
+      slide.pictures.forEach((picture) => (picture.currentPopup = '')),
+    );
   },
 });
