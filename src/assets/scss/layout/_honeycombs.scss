@@ -131,5 +131,21 @@
       // background-image: url('../img/content/comb-9.png');
       grid-area: comb-10;
     }
+
+
+    &__text {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      border-radius: 5px;
+
+      &::before {
+        content: '“';
+        height: auto;
+        width: fit-content;
+        font-size: u.rem(130);
+        line-height: 1;
+        font-family: u.$fontForum;
+      }
+    }
   }
 }
