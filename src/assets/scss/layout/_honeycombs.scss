@@ -133,7 +133,6 @@
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(20px);
       border-radius: 5px;
-      display: none;
 
       &::before {
         content: '“';
@@ -142,6 +141,10 @@
         font-size: u.rem(130);
         line-height: 1;
         font-family: u.$fontForum;
+
+        @include u.breakpoint-down(small) {
+          font-size: u.rem(70);
+        }
       }
     }
   }
