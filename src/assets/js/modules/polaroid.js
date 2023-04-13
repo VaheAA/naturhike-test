@@ -254,6 +254,13 @@ export default () => ({
     },
   ],
   currentSlide: 1,
+  changeSlide() {
+    if (this.currentSlide === 1) {
+      this.currentSlide = 2;
+    } else {
+      this.currentSlide = 1;
+    }
+  },
   bindPopup(element) {
     if (window.innerWidth >= 728) {
       this.slides.forEach((slide) => {

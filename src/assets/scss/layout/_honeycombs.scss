@@ -4,7 +4,7 @@
   background-image: url('../img/design/honeycombs-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  padding-block: u.rem(50);
 
 
   &__grid {
@@ -22,14 +22,13 @@
 
     @include u.breakpoint-down(small) {
       width: 100%;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
       grid-template-areas:
         "comb-4 comb-4 comb-4"
         "comb-2 comb-5 comb-7"
         "comb-3 .      comb-8"
-        "comb-9 comb-1 comb-6"
-      ;
+        "comb-9 comb-1 comb-6";
       place-items: center;
     }
   }
@@ -39,15 +38,15 @@
     position: relative;
     width: u.rem(191);
     height: u.rem(141);
-    margin: 0 10px;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: u.rem(20);
-    margin-inline: u.rem(-10);
+    margin-bottom: u.rem(10);
+    margin-inline: u.rem(-20);
     overflow: hidden;
     filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.25));
     transition: all 0.3s ease;
+    border-radius: 10px;
 
     &:hover {
       transform: scale(1.05);
@@ -57,7 +56,7 @@
     @include u.breakpoint-down(small) {
       width: u.rem(130);
       height: u.rem(105);
-      margin-bottom: u.rem(20);
+      margin-bottom: u.rem(15);
     }
 
     &[data-comb="1"] {
@@ -65,7 +64,7 @@
       grid-area: comb-1;
 
       @include u.breakpoint-down(small) {
-        margin-top: u.rem(-130);
+        margin-top: u.rem(-120);
       }
     }
 
@@ -87,7 +86,7 @@
       margin-bottom: u.rem(-145);
 
       @include u.breakpoint-down(small) {
-        margin-bottom: u.rem(-115);
+        margin-bottom: u.rem(-120);
       }
 
     }

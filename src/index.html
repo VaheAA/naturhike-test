@@ -249,12 +249,14 @@
           <span x-text="slides.length"></span>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev">
+          data-bs-slide="prev" @click="changeSlide()" :disabled="currentSlide === 1"
+          :class="currentSlide === 1 && 'opacity-50'">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-          data-bs-slide="next">
+          data-bs-slide="next" @click="changeSlide()" :disabled="currentSlide === 2"
+          :class="currentSlide === 2 && 'opacity-50'">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -266,8 +268,8 @@
   <!-- honeycombs  -->
   <div class="honeycombs" x-data="honeycombs" x-ref="honeycombs">
     <div class="container-lg h-100">
-      <div class="h-auto d-flex">
-        <div class="d-flex align-items-center flex-column flex-sm-row h-100 w-100 w-md-75 pb-5">
+      <div class="h-auto d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex align-items-center flex-column gap-4 flex-sm-row h-100 w-100 w-md-75">
           <div class="honeycombs__grid align-items-center me-auto mt-auto">
             <template x-for="item in combs">
               <div class="comb d-flex flex-column justify-content-center align-items-center" :data-comb="item.id"
