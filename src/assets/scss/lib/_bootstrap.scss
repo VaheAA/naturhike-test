@@ -15,10 +15,6 @@ $utilities: map-merge($utilities,
         (responsive: true),
       ),
     ),
-    ("width": map-merge(map-get($utilities, "width"),
-        (responsive: true),
-      ),
-    ),
     ("color": map-merge(map-get($utilities, "color"),
         (responsive: true),
       ),
@@ -28,12 +24,17 @@ $utilities: map-merge($utilities,
       ),
     ));
 
+
 $utilities: (
   "end": (property: right,
     class: end,
     responsive: true,
     values: (5: 5px),
   ),
+  "font-size": (property: font-size,
+    class: fs,
+    responsive: true,
+    values: (6: 18px, 7: 14px, 8: 12px)),
   "padding-block": (property: padding-block,
     class: py,
     responsive: true,
@@ -42,7 +43,7 @@ $utilities: (
 );
 
 
-@import "bootstrap/scss/utilities/api";
+// @import "bootstrap/scss/utilities/api";
 @import 'bootstrap/scss/bootstrap';
 
 

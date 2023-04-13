@@ -189,7 +189,8 @@
       <div class="carousel-inner h-100 position-relative">
         <!-- Slide 1 -->
         <template x-for="slide in slides">
-          <div class="carousel-item h-100" :class="slide.id === '1'  && 'active'">
+          <div class="carousel-item h-100" @touchend="changeSlide()" x-ref="`slide-${slide.id}`"
+            :class="slide.id === '1'  && 'active'">
             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center h-100 py-10">
               <template x-for="picture in slide.pictures">
                 <div class="polaroid__item  position-relative px-2 pt-1 pb-5 bg-white w-75"
@@ -275,7 +276,7 @@
               <div class="comb d-flex flex-column justify-content-center align-items-center" :data-comb="item.id"
                 @mouseover="currentComb = item.id; $refs.honeycombs.style.backgroundImage = `url(${item.bgImage})`"
                 @mouseout="currentComb = ''; $refs.honeycombs.style.backgroundImage = `url(${defaultBg})`">
-                <h5 class="fs-7 fs-md-5 text-light mb-3 w-50 text-center" x-text="item.title"></h5>
+                <h5 class="fs-7 fs-sm-6 text-light mb-3 w-50 text-center" x-text="item.title"></h5>
                 <a href="#" class="btn btn-outline-icon"></a>
               </div>
             </template>
@@ -285,7 +286,7 @@
               <div x-show="item.id === currentComb"
                 class="comb__text px-2 px-sm-4 py-2 py-sm-3 align-items-center text-white text-center gap-2"
                 :class="item.id === currentComb && 'd-flex'" :id="item.id">
-                <p class="fs-7 fs-sm-5 w-100 w-sm-75 mx-auto" x-text="item.text">
+                <p class="fs-7 fs-sm-6 w-100 w-sm-75 mx-auto" x-text="item.text">
                 </p>
               </div>
             </template>
