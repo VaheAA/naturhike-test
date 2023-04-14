@@ -4,7 +4,12 @@
   background-image: url('../img/design/honeycombs-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-block: u.rem(50);
+  // padding-block: u.rem(50);
+  height: u.rem(768);
+
+  @include u.breakpoint-down(small) {
+    height: auto;
+  }
 
 
   &__grid {
