@@ -6,15 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./assets/img/favicon.png" type="image/png">
-  <!-- <link rel="preload" as="image" href="./assets/img/content/comb-1-bg.png">
-  <link rel="preload" as="image" href="./assets/img/content/comb-2-bg.png">
-  <link rel="preload" as="image" href="./assets/img/content/comb-3-bg.png">
-  <link rel="preload" as="image" href="./assets/img/content/comb-4-bg.png">
-  <link rel="preload" as="image" href="./assets/img/content/comb-5-bg.png">
-  <link rel="preload" as="image" href="./assets/img/content/comb-6-bg.png">
-  <link rel="preload" as="image" href="./assets/img/content/comb-7-bg.png">
-  <link rel="preload" as="image" href="./assets/img/content/comb-8-bg.png">
-  <link rel="preload" as="image" href="./assets/img/content/comb-9-bg.png"> -->
   <title>NaturHike</title>
 </head>
 
@@ -281,9 +272,9 @@
       <div class="h-auto d-flex flex-column h-100 justify-content-center align-items-center">
         <div class="d-flex align-items-center flex-column gap-4 flex-sm-row w-100 w-md-75">
           <div class="honeycombs__grid align-items-center me-auto mt-auto">
-            <template x-for="item in combs">
+            <template x-for="(item, index) in combs">
               <div class="comb d-flex flex-column justify-content-center align-items-center" :data-comb="item.id"
-                @mouseover="currentComb = item.id; $refs.honeycombs.style.backgroundImage = `url(${item.bgImage})`"
+                @mouseover="currentComb = item.id; $refs.honeycombs.style.backgroundImage = `url(${preloadedImages[index].src})`"
                 @mouseout="currentComb = ''; $refs.honeycombs.style.backgroundImage = `url(${defaultBg})`">
                 <h5 class="fs-7 fs-sm-6 text-light mb-3 w-50 text-center" x-text="item.title"></h5>
                 <a href="#" class="btn btn-outline-icon"></a>
