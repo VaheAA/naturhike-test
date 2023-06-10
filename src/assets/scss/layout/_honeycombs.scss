@@ -5,7 +5,11 @@
   background-color: rgba(0, 0, 0, 0.65);
   background-repeat: no-repeat;
   background-size: cover;
-  padding-block: u.rem(50);
+  height: u.rem(768);
+
+  @include u.breakpoint-down(small) {
+    height: auto;
+  }
 
 
   &__grid {
