@@ -4,6 +4,7 @@ import * as bootstrap from 'bootstrap';
 import Alpine from 'alpinejs';
 import polaroid from './modules/polaroid';
 import honeycombs from './modules/honeycombs';
+import './modules/swiper';
 
 window.Alpine = Alpine;
 

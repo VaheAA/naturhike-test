@@ -1,0 +1,83 @@
+@use '../util' as u;
+
+
+.curved-slider {
+  width: 100vw;
+  height: u.rem(580);
+  overflow: hidden;
+  position: relative;
+  --v-offset: 120px;
+  --curve-height: 180px;
+
+  @include u.breakpoint-down(small) {
+    height: auto;
+    --v-offset: 80px;
+    --curve-height: 80px;
+  }
+
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    background: white;
+    width: calc(100vw + 2 * var(--v-offset));
+    height: var(--curve-height);
+    position: absolute;
+    border-radius: 50%;
+    left: calc(-1 * var(--v-offset));
+    right: calc(-1 * var(--v-offset));
+    z-index: 9999;
+  }
+
+  &:before {
+    top: calc(-0.6 * var(--curve-height));
+  }
+
+  &:after {
+    bottom: calc(-0.6 * var(--curve-height));
+  }
+
+  .swiper-slide {
+    height: auto !important;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      scroll-snap-align: center;
+    }
+
+  }
+
+  &-button {
+    position: absolute;
+    border: 2px solid white;
+    top: 50%;
+    transform: translateY(u.rem(-150));
+    z-index: 999;
+    width: u.rem(60);
+    border-radius: 7px;
+    padding: u.rem(10) u.rem(12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &-next {
+      right: u.rem(40)
+    }
+
+    &-prev {
+      left: u.rem(40)
+    }
+  }
+
+  &-sign {
+    right: 45%;
+    bottom: 15%;
+    width: 35px;
+    height: 35px;
+  }
+}
