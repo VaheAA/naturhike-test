@@ -1,13 +1,12 @@
 @use '../util' as u;
 
-
 .curved-slider {
   width: 100vw;
-  height: u.rem(580);
+  height: u.rem(880);
   overflow: hidden;
   position: relative;
-  --v-offset: 120px;
-  --curve-height: 180px;
+  --v-offset: 180px;
+  --curve-height: 240px;
 
   @include u.breakpoint-down(small) {
     height: auto;
@@ -15,10 +14,9 @@
     --curve-height: 80px;
   }
 
-
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: block;
     background: white;
     width: calc(100vw + 2 * var(--v-offset));
@@ -48,14 +46,12 @@
       object-fit: cover;
       scroll-snap-align: center;
     }
-
   }
 
   &-button {
     position: absolute;
     border: 2px solid white;
-    top: 50%;
-    transform: translateY(u.rem(-150));
+    top: u.rem(440);
     z-index: 999;
     width: u.rem(60);
     border-radius: 7px;
@@ -64,13 +60,12 @@
     justify-content: center;
     align-items: center;
 
-
     &-next {
-      right: u.rem(40)
+      right: u.rem(40);
     }
 
     &-prev {
-      left: u.rem(40)
+      left: u.rem(40);
     }
   }
 
